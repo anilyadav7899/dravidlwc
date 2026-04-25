@@ -1,0 +1,9 @@
+<template>
+<lightning-card title = "Return Request">
+    <lightning-input label = "Order Number" onchange={handleOrder}></lightning-input>
+    <lightning-input label = "email" onchange = {handleEmail}></lightning-input>
+    <lightning-input label = "date" type = "date" onchange={handleDate}></lightning-input>
+    <lightning-textarea label = "Reason" onchange ={handleReason}></lightning-textarea>
+    <lightning-button label = "submit" varient = "brand" onclick={handleSubmit}></lightning-button>
+</lightning-card>
+</template>
