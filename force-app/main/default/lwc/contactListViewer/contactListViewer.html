@@ -1,0 +1,20 @@
+<template>
+<lightning-card title="contacts labeled">
+    <lightning-button label = "Load Contacts" onclick={handleClick}></lightning-button>
+    <!-- show contacts  -->
+    <template if:true={contacts}>
+        <template for:each={contacts} for:item="con">
+            <div key = {con.Id}>
+                LastName :{con.LastName},
+                phone : {con.Phone}
+            </div>
+        </template>
+        </template>
+ <!-- show error -->
+        <template if:true={error}>
+            <div style="color:green;">
+                error loading data 
+            </div>
+ </template>
+</lightning-card>
+</template>

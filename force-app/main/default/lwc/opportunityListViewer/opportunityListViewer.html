@@ -1,0 +1,19 @@
+<template>
+<lightning-card title="opportunity labelled">
+    <lightning-button label="Load opportunities" onclick={handleOnClick}></lightning-button>
+    <!-- Show opportunities -->
+    <template if:true={Opportunities}>
+        <template for:each={Opportunities} for:item="opp">
+            <div key = {opp.Id}>
+                name :{opp.Name}
+            </div>
+        </template>
+    </template>
+    <!-- show error -->
+    <template if:true={errors}>
+        <div style="color:blue;">
+            error loading data 
+        </div>
+    </template>
+</lightning-card>
+</template>

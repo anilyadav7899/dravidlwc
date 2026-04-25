@@ -1,0 +1,65 @@
+<template>
+    <lightning-card icon-name="custom:custom11" title="Data Binding">
+        <div class="slds-var-m-around_medium slds-box">
+           <div class="slds-text-heading_medium"> Binding:Rendering of the data into the component html file</div>
+           <div class="slds-var-m-around_medium slds-box">
+             <lightning-button variant="brand" label="get Phone" onclick={assignPhoneNumber} ></lightning-button>&emsp;
+              <lightning-button variant="success" label="Yes" onclick={captureButtonLabel} ></lightning-button>&emsp;
+               <lightning-button variant="Destructive" label="No" onclick={captureButtonLabel} ></lightning-button>&emsp;
+           </div>
+           <div class="slds-text-heading_small"> Empty variable</div>
+           <p class="slds-text-title"> greeting → {greeting}</p>
+           <div class="slds-text-heading_small"> variable with predefined value </div>
+           <p class="slds-text-title "> person name = {personName}</p>
+           <div class="slds-text-heading_medium"> variable is initilised when the component is created</div>
+           <p class="slds-text-title"> company name  → {company}</p>
+           <div class="slds-text-heading_medium"> variable is initialised when component is initialised</div>
+           <p class="slds-text-title"> city → {city}</p>
+           <div class="sldds-text-heading_medium"> variable value is initialised when button is clicked</div>
+           <p class="slds-text-title"> phone number → {phoneNumber} </p>
+           <div class="slds-text-heading_medium"> variable is initialise dwhen label of the button is clicked</div>
+           <p class="slds-text-title"> Clicked button label → {clickedButtonLabel}</p>
+           <div class="slds-text-heading_medium"> variable is initilised when ever changes occur in input</div>
+           <lightning-input type = "text" label = "state" onchange= {capturestate}>
+           </lightning-input>
+           <p class="slds-text-title"> State Entered →  {state}</p>
+           <div class="slds-text-heading_medium"> variable is initilised whenever enter key is pressed on the inpt </div>
+           <lightning-input type="text" label="country" onkeyup = {capturecountry}></lightning-input>
+           <p class="slds-text-title"> country entered → {country} </p>
+           <div class="slds-text-heading_small">Conditional Rendering using a checkbox</div>
+           <lightning-input  class="myCheck" type = "checkbox" label = "Enable/Disable" onchange= {changeHandler}></lightning-input>
+           <p class="slds-text-title"> checkBox State → {isActive}</p>
+           <div class="slds-var-m-around_medium slds-box ">
+             <template lwc:if={isActive}>
+                <p> checkbox is enabled</p>
+             </template>
+            <template lwc:else >
+               <p> checkbox is disable</p>
+              </template>
+           </div>
+           <div class="slds-text-heading_small"> itrative rendering</div>
+          <p> cars available → {cars}</p>
+          <template for:each = {cars} for:item="car">
+            <p key = {car} > car → {car}</p>
+          </template>
+          <div class="slds-text-heading_small"> binding the data from an object</div>
+          <p class="slds-text-title">  vehicle →  {vehicle}</p>
+          <p class="slds-text-title">  type → {vehicle.type}</p>
+          <p class="slds-text-title"> colour → {vehicle.colour}</p>
+           <p class="slds-text-title"> wheels → {vehicle.wheels}</p>
+            <p class="slds-text-title"> insurance → {vehicle.insurance}</p>
+             <p class="slds-text-title"> refurbished → {vehicle.refurbished}</p>
+             <div class="slds-text-heading_small"> capture the recordId if available → {recordId}</div>
+             <div class="slds-var-m-around_medium slds-box">
+                <template lwc:if = {recordId}>
+                    <p> the comp;onent is loaded on the record [age if the record id is {recordId}] </p>
+                </template>
+                <template lwc:else>
+                    <p> the component is not loaded on the page </p>
+                </template>
+             </div>
+
+        </div>
+
+    </lightning-card>
+</template>

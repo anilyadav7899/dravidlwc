@@ -1,0 +1,18 @@
+<template>
+<lightning-card label="viewaccounts">
+    <!-- show accounts -->
+    <template if:true={Accounts}>
+<template for:each={Accounts} for:item="acc">
+    <div key = {acc.Id}>
+        name :{acc.Name}
+</div>
+</template>
+    </template>
+    <!-- show error -->
+    <template if:true={errors}>
+        <div style="color:blue;">
+            error loading data
+        </div>
+</template>
+</lightning-card>
+</template>

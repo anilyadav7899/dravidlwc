@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Calculator Subtract">
+        <div class="slds-card__body slds-card__body_inner">
+            <lightning-input type="number" label="Num1" value={number1} onchange={handleChange1}></lightning-input>
+            <lightning-input type="number" label="Num2" value={number2} onchange={handleChange2}></lightning-input>
+            <lightning-button label="Subtract" onclick={subtract} class="slds-m-left_x-small"></lightning-button>
+            <p class="slds-m-around_small"> Result:{result}</p>
+        </div>
+    </lightning-card>
+    
+</template>

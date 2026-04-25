@@ -1,0 +1,54 @@
+<template>
+    <lightning-card>
+            <div class="slds-var-m-around_medium slds-box">
+                <div class="slds-text-heading_medium slds-text-align_centre"> Binding:Rendering of the data into the html file</div>
+                <div class="slds-var-m-around_medium slds-box">
+                <lightning-button variant="brand" label="Get phone number"  onclick={phonenumberassigned} ></lightning-button>&emsp;
+                <lightning-button variant="destructive" label="yes"  onclick={capturebuttonlabel} ></lightning-button>&emsp;
+                <lightning-button variant="success" label="no"  onclick={capturebuttonlabel} ></lightning-button>&emsp;
+                <lightning-button varient = "brand-outline" label="Toggle Refurbished" onclick={ToggleRefurbished}></lightning-button>&emsp;
+
+                </div>
+                <div class="slds-text-heading-small"> empty variable</div>
+                <div class="slds-text-title"> greeting :{greeting} </div>
+                <div class="slds-text-heading-small">variable with predefined value</div>
+                <div class="slds-text-title"> person name :{personname}</div>
+                <div class="slds-text-heading-small">variable is initialsed when component is created</div>
+                <div class="slds-text-title">company name :{company}</div>
+                <div class="slds-text-heading-small">variable is initialised when component is executed</div>
+                <div class="slds-text-title">cityname :{city}</div>
+                <div class="slds-text-heading-small">variable is initialised when a button is clicked</div>
+                <div class="slds-text-title">phone number :{phone}</div>
+                <div class="slds-text-heading-small"> variable is initialised with the label of the button </div>
+                <div class="slds-text-title"> clicked button label :{clickedbuttonlabel}</div>
+                <div class="slds-text-heading-small"> variable is initialised when ever clicked on input</div>
+                <lightning-input type="text" label="state" onchange={capturestate}></lightning-input>
+                <div class="slds-text-title">Entered state is: {state}</div>
+                <div class="slds-text-heading-small"> varoiable is initialised when ever press on key</div>
+                <lightning-input type="text" label="country" onkeyup={capturecountry}></lightning-input>
+                 <div class="slds-text-title"> eneterd country :{country}</div>
+                 <div class="slds-text-heading-small"> variable is initialised when rendering</div>
+                 <lightning-input class="cbox" type="checkbox" label="enable/disable" onchange ={changehandler}></lightning-input>
+                 <div class="slds-text-title" > check box state :{isActive}</div>
+               <div class="slds-var-m-around_medium slds-box-"></div>
+               <template lwc:if={isActive}>
+               <div class="slds-text-colour_success"> is enabled up</div>
+               </template>
+               <template lwc:else>
+                <div class="slds-text-colour_error">  disabledup</div>
+               </template>
+               <div class="slds-text-heading-small"> iterative rendering</div>
+               <div class="slds-text-title"> the availble cars :{cars}</div>
+               <template for:each={cars} for:item="car">
+                <div key={car}>{car}</div>
+               </template>
+               <div class="slds-text-heading-small"> Binding the dat afrom the object variable</div>
+               <div class="slds-text-title"> the key :{vehicle.type}</div>
+               <div class="slds-text-title"> the colour :{vehicle.colour}</div>
+               <div class="slds-text-title"> the refurbished :{vehicle.refurbished}</div>
+               <div class="slds-text-title"> the insurence :{vehicle.insurence}</div>
+               <div class="slds-text-heading-small"> Capture the record id variable :{recordId}</div>
+            </div>
+
+    </lightning-card>
+</template>

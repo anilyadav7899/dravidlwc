@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="zodiac sign messenger">
+
+        <lightning-input
+            class="slds-m-around_medium"
+            value = {UserName}
+            type="text"
+            onchange={handleonchangeName}
+            label="Enter Your Name">
+        </lightning-input>
+
+        <lightning-input
+            class="slds-m-around_medium"
+            value = {UserDateOfBirth}
+            onchange={handleonchangeDate}
+            type="date"
+            label="Enter your date of birth">
+        </lightning-input>
+
+        <lightning-button
+            variant="brand"
+            label="Hit It"
+            title="Hit It"
+            onclick={handleonsubmit}
+            class="slds-m-around_medium slds-align_absolute-center">
+        </lightning-button>
+
+    </lightning-card>
+</template>

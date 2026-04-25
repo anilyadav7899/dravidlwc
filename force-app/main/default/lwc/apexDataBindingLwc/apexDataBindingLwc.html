@@ -1,0 +1,17 @@
+<template>
+<lightning-card icon-name="custom:custom12" title="Apex Data Binding">
+    <div class="slds-var-m-around_medium slds-box">
+        <div class="slds-text-heading_small"> Data returned from apex reactively </div>
+        <div class="slds-text-title"> message → {message.data}</div>
+        <div class="slds-text-heading_medium"> data returnded from apex with methid as parameters </div>
+        <div class="slds-text-title"> greeting → {greeting}</div>
+        <div class="slds-var-m-around_medium slds-box">
+            <lightning-input type = "number" label="number1" name="n1" onchange= {changehandler}></lightning-input>
+            <lightning-input type="number" label="number2" name = "n2" onchange= {changehandler}></lightning-input>
+            <lightning-combobox label = "operation" name="operation" value = {operation} options = {options} onchange = {changehandler}></lightning-combobox>
+            <lightning-button label = "calculate" onclick= {calculateHandler}></lightning-button>
+            <div class="slds-text-heading_small"> result → {result} </div>
+        </div>
+        </div>
+</lightning-card> 
+</template>
