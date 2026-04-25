@@ -11,6 +11,7 @@ public with sharing class FutureExample {
 
         if(!accList.isEmpty()){
             update accList;
+system.debug('the updated records'+accList);
         }
     }
 }
